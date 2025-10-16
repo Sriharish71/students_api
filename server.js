@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO_URI)
 const studentSchema = new mongoose.Schema({
     id:{
         type: String,
-        default: Date.now()
+        default:  () => Date.now().toString()
     },
     name:{
         type: String,
